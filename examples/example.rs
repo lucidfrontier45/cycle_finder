@@ -1,4 +1,4 @@
-use cycle_finder::{find_cycles, Graph};
+use cycle_finder::Graph;
 
 fn main() {
     let edges = [
@@ -16,7 +16,7 @@ fn main() {
         (11, 9),
     ];
 
-    let graph = Graph::from_edges(&edges);
-    let cycles = find_cycles(&graph);
+    let graph = Graph::from(edges);
+    let cycles = graph.find_cycles();
     dbg!(cycles);
 }
